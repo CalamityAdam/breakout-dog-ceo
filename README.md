@@ -1,5 +1,5 @@
 # Fetch Dog CEO Challenge
-
+<!-- 
 ## Challenge 1
 
 This repository includes an `index.html` file that loads an `index.js` file.
@@ -15,7 +15,7 @@ Add JavaScript so that:
 - parse the response as `JSON`
 - add image elements to the DOM **for each**🤔 image in the array
 
----
+--- -->
 
 ## Challenge 2
 
