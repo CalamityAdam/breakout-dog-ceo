@@ -1,7 +1,6 @@
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
 const breedUrl = 'https://dog.ceo/api/breeds/list/all'
-const imageContainer = document
-  .getElementById('dog-image-container');
+const imageContainer = document.getElementById('dog-image-container');
 const dogBreedContainer = document.getElementById('dog-breeds')
 const breedDropdown = document.getElementById('breed-dropdown')
 
@@ -56,10 +55,32 @@ const fetchBreeds = () => {
   fetch(breedUrl)
     .then(res => res.json())
     .then(data => {
-      renderBreeds(Object.keys(data.message))
       allBreeds = Object.keys(data.message)
+      renderBreeds(allBreeds)
     })
 }
+
+/**
+ * Alternative to include all sub breeds as well:
+ */
+// const fetchBreeds = () => {
+//   fetch(breedUrl)
+//     .then(res => res.json())
+//     .then(data => {
+//       for (const key in data.message) {
+//         if (data.message[key]) {
+//           if (data.message[key].length) {
+//             data.message[key].forEach(breed => {
+//               allBreeds.push(breed + ' ' + key)
+//             })
+//           } else {
+//             allBreeds.push(key)
+//           }
+//         }
+//       }
+//       renderBreeds(allBreeds)
+//     })
+// }
 
 const init = () => {
   fetchImages()
